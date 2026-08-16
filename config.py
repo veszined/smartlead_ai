@@ -5,8 +5,10 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'varsayilanGizliAnahtar')
-    GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
-    DATABASE_NAME = "leads.db"
+    DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///leads.db')
+    GROQ_API_KEY = os.environ.get('GROQ_API_KEY', 'varsayilanGroqAnahtari')
+    AI_PROVIDER = os.environ.get('AI_PROVIDER', 'groq')
+    CORS_ORIGINS = os.environ.get('CORS_ORIGINS', '*')
     
     BUSINESS_CONTEXT = """
     KESİN TALİMAT: Sen, 'Smart Coffee & Roastery' isimli 3. nesil demlemeler ve kahve çekirdeği kavuruculuğu yapan, workshoplar veren butik
@@ -22,3 +24,15 @@ class Config:
     2. Kullanıcı ismini söyledikten sonra ona ismiyle hitap et ve kahve çekirdeklerimizden ya da tadım etkinliklerimizden bahsedip
     iletişim bilgilerini iste. Asla kendi kendine kullanıcı rolüne girip cevap yazma.
     """
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+class ProductionConfig(Config):
+    DEBUG = False
+
+config_options = {
+    'development': DevelopmentConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
+}
