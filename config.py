@@ -6,6 +6,7 @@ load_dotenv()
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'varsayilanGizliAnahtar')
     DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///leads.db')
+    DATABASE_NAME = "leads.db"
     GROQ_API_KEY = os.environ.get('GROQ_API_KEY', 'varsayilanGroqAnahtari')
     AI_PROVIDER = os.environ.get('AI_PROVIDER', 'groq')
     CORS_ORIGINS = os.environ.get('CORS_ORIGINS', '*')
