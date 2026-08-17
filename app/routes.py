@@ -22,8 +22,9 @@ def sohbet():
     try:
         cevap = ai_service.yanitUret(veri['mesaj'], veri.get('gecmisMesajlar', []))
         return jsonify({"basari": True, "cevap": cevap}), 200
-    except AIServiceError:
-        return jsonify({"basari": False, "hata": "Yapay zeka şu an yanıt veremiyor."}), 503
+    except Exception as e:
+    print(f"GERÇEK HATA: {str(e)}")
+    return jsonify({"basari": False, "hata": f"Gerçek Hata: {str(e)}"}), 503
 
 @api_bp.route('/leads', methods=['POST'])
 def yeniLead():
