@@ -33,11 +33,13 @@ class AIService:
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json"
         }
-        
         payload = {
             "model": self.model,
-            "messages": messages
+            "messages": messages,
+            "temperature": 0.7,
+            "tool_choice": "none"
         }
+        
         try:     
             # Groq API'a istek at
             response = requests.post(self.api_url, headers=headers, json=payload)   
