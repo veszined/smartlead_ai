@@ -9,7 +9,7 @@ class AIService:
     def __init__(self):
         self.api_key = Config.GROQ_API_KEY
         self.api_url = "https://api.groq.com/openai/v1/chat/completions"
-        self.model = "llama-3.1-8b-instant"
+        self.model = "llama3-8b-8192"
 
     def yanitUret(self, mesaj, gecmisMesajlar=None):
         # API anahtarının tanımlı olup olmadığını kontrol et
