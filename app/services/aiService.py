@@ -38,14 +38,16 @@ class AIService:
             "model": self.model,
             "messages": messages
         }
-
-        try:
-            # Groq API'ye istek at ve yanıtı döndür
-            response = requests.post(self.api_url, headers=headers, json=payload)
-            response.raise_for_status()
+        try:     
+            # Groq API'ye istek at
+            response = requests.post(self.api_url, headers=headers, json=payload)   
+            # Eğer cevap başarılı değilse Groq'un gizli mesajını ekrana yaz
+            if response.status_code != 200:
+                raise Exception(response.text)                
             data = response.json()
             return data["choices"][0]["message"]["content"]
+            
         except Exception as e:
-            raise AIServiceError(f"Yapay zeka servisi hatası: {str(e)}")
+            raise AIServiceError(f"Groq Detayı: {str(e)}")
         
 ai_service = AIService()
