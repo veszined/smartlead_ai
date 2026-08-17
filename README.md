@@ -14,7 +14,7 @@ En temel amacı; tadım etkinlikleri veya toptan satışlar için müşterilerde
 
 ## Canlı Önizleme
 * **Wix Web Sitesi:** https://sevvalldeniz.wixsite.com/smartcoffeeroastery
-* **API Endpoint:** https://smartlead-ves.onrender.com/api/sohbet
+* **API Endpoint:** https://smartlead-ves.onrender.com
 
 ## Kurulum ve Çalıştırma
 Projeyi kendi bilgisayarınızda çalıştırmak için:
