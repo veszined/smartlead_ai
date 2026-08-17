@@ -39,9 +39,9 @@ class AIService:
             "messages": messages
         }
         try:     
-            # Groq API'ye istek at
+            # Groq API'a istek at
             response = requests.post(self.api_url, headers=headers, json=payload)   
-            # Eğer cevap başarılı değilse Groq'un gizli mesajını ekrana yaz
+            # Eğer cevap başarılı değilse Groq'un hata mesajını ekrana yaz
             if response.status_code != 200:
                 raise Exception(response.text)                
             data = response.json()
