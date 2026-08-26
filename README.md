@@ -9,7 +9,7 @@ En temel amacı; tadım etkinlikleri veya toptan satışlar için müşterilerde
 * **Frontend:** Wix Velo (JavaScript)
 * **Backend:** Python, Flask, Flask-CORS
 * **Veritabanı:** SQLite
-* **Yapay Zeka:** Groq API (Model: openai/gpt-oss-20b)
+* **Yapay Zeka:** Groq API (Model: openai/gpt-oss-120b)
 * **Sunucu:** Render
 
 ## Canlı Önizleme
